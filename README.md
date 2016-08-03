@@ -56,7 +56,7 @@ API
 
     * **port** - _integer_ - Port number to listen on.
 
-    * **users** - _mixed_ - The user configuration. This is used to both authenticate users and to optionally pass settings to [`repl.start()`](https://nodejs.org/docs/latest/api/repl.html#repl_repl_start_options). If `users` is a _function_, it is passed two arguments: (< _string_ >username, < _function_ >callback), where `callback` has the signature (< _Error_>err, < _object_ >userConfig). If `users` is an object, it should be keyed on username, with the value being the user configuration. Allowed user configuration properties:
+    * **users** - _mixed_ - The user configuration. This is used to both authenticate users and to optionally pass settings to [`repl.start()`](https://nodejs.org/docs/latest/api/repl.html#repl_repl_start_options). If `users` is a _function_, it is passed two arguments: (< _string_ >username, < _function_ >callback), where `callback` has the signature (< _Error_ >err, < _object_ >userConfig). If `users` is an object, it should be keyed on username, with the value being the user configuration. Allowed user configuration properties:
 
         * One of two authentication methods is required:
 
