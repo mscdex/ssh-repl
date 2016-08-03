@@ -23,7 +23,7 @@ const fs = require('fs');
 
 const sshrepl = require('ssh-repl');
 
-sshrepl({
+const repl = sshrepl({
   server: {
     hostKeys: [ fs.readFileSync('host.key') ]
   },
@@ -41,6 +41,8 @@ sshrepl({
 }, function() {
   console.log('SSH REPL listening');
 });
+
+// Call `repl.close()` to stop listening
 ```
 
 API
@@ -48,7 +50,7 @@ API
 
 `require('ssh-repl')` returns a function that creates and starts an SSH REPL. It has the signature:
 
-* (< _object_ >config[, < _function_ >callback]) - _(void)_ - Creates and starts an SSH REPL. `config` can contain:
+* (< _object_ >config[, < _function_ >callback]) - _object_ - Creates and starts an SSH REPL. The object returned contains a `.close()` method to stop the server. It accepts an optional callback that is called when the server is closed. `config` can contain:
 
     * **server** - _object_ - The configuration for the SSH server. See the [`ssh2`](https://github.com/mscdex/ssh2#server-methods) documentation for a list of supported properties.
 
