@@ -1,6 +1,6 @@
 {
   "name": "ssh-repl",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "SSH into your node.js process and access a REPL",
   "main": "lib/index.js",
   "repository": {
