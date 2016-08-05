@@ -66,4 +66,4 @@ API
 
         * **repl** - _object_ - If supplied, the properties on this object are passed on to [`repl.start()`](https://nodejs.org/docs/latest/api/repl.html#repl_repl_start_options).
 
-    If `callback` is supplied, it is called once the SSH REPL is listening for incoming connections.
+    If `callback` is supplied, it is called once the SSH REPL is listening for incoming connections. It has the signature (< _Error_ >err, < _number_ >boundPort). The `boundPort` argument is useful when binding on port 0.
