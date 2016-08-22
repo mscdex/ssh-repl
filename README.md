@@ -38,7 +38,8 @@ const repl = sshrepl({
     }
   },
   port: 2244
-}, function() {
+}, function(err, boundPort) {
+  if (err) throw err;
   console.log('SSH REPL listening');
 });
 
