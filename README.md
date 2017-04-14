@@ -37,7 +37,10 @@ const repl = sshrepl({
       repl: { prompt: 'bar> ' }
     }
   },
-  port: 2244
+  port: 2244,
+  context: {
+      foo: 'bar'
+  }
 }, function(err, boundPort) {
   if (err) throw err;
   console.log('SSH REPL listening');
@@ -66,5 +69,7 @@ API
             * **publicKey** - _mixed_ - The public key for the user. This value can be a _Buffer_ instance or a _string_.
 
         * **repl** - _object_ - If supplied, the properties on this object are passed on to [`repl.start()`](https://nodejs.org/docs/latest/api/repl.html#repl_repl_start_options).
+
+    * **context** - _object_ - The context object to pass to the REPL. **Default:** (none)
 
     If `callback` is supplied, it is called once the SSH REPL is listening for incoming connections. It has the signature (< _Error_ >err, < _number_ >boundPort). The `boundPort` argument is useful when binding on port 0.
